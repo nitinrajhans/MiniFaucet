@@ -159,7 +159,7 @@ function Ads() {
 
   }
 
-}, [providers]);
+}, [providers, watchAd]);
 
 
 
