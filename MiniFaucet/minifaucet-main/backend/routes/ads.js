@@ -140,7 +140,7 @@ router.get('/providers', authenticateUser, async (req, res) => {
     if (adSettings.adsgram.enabled && adSettings.adsgram.blockId) {
       providers.push({
         id: 'adsgram',
-        name: 'Adsgrammmmmm',
+        name: 'Card Flip',
         reward: adSettings.adsgram.reward,
         blockId: adSettings.adsgram.blockId
       });
@@ -149,7 +149,7 @@ router.get('/providers', authenticateUser, async (req, res) => {
     if (adSettings.monetag.enabled && adSettings.monetag.zoneId) {
       providers.push({
         id: 'monetag',
-        name: 'Monetag',
+        name: 'Neon Grid',
         reward: adSettings.monetag.reward,
         zoneId: adSettings.monetag.zoneId
       });
@@ -158,7 +158,7 @@ router.get('/providers', authenticateUser, async (req, res) => {
     if (adSettings.adexora.enabled && adSettings.adexora.appId) {
       providers.push({
         id: 'adexora',
-        name: 'Adexora',
+        name: 'Rocket Lanes',
         reward: adSettings.adexora.reward,
         appId: adSettings.adexora.appId
       });
@@ -167,7 +167,7 @@ router.get('/providers', authenticateUser, async (req, res) => {
     if (adSettings.gigapub.enabled && adSettings.gigapub.projectId) {
       providers.push({
         id: 'gigapub',
-        name: 'Gigapub',
+        name: 'Claw Capsules',
         reward: adSettings.gigapub.reward,
         projectId: adSettings.gigapub.projectId
       });
@@ -176,7 +176,7 @@ router.get('/providers', authenticateUser, async (req, res) => {
     if (adSettings.onclicka.enabled && adSettings.onclicka.adCodeId) {
       providers.push({
         id: 'onclicka',
-        name: 'Onclicka',
+        name: 'Reward Path',
         reward: adSettings.onclicka.reward,
         adCodeId: adSettings.onclicka.adCodeId
       });
