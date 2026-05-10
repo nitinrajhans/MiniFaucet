@@ -135,6 +135,29 @@ function Ads() {
     fetchAdsInfo();
   }, [fetchAdsInfo, cachedAdsInfo]);
 
+  // AUTO OPEN ADSGRAM
+const [autoAdShown, setAutoAdShown] = useState(false);
+
+useEffect(() => {
+
+  if (autoAdShown) return;
+
+  const adsgramProvider = providers.find(
+    p => p.id === "adsgram"
+  );
+
+  if (adsgramProvider) {
+
+    setAutoAdShown(true);
+
+    setTimeout(() => {
+      watchAd(adsgramProvider);
+    }, 1000);
+
+  }
+
+}, [providers, autoAdShown]);
+
   // Cooldown timer
   useEffect(() => {
     if (cooldown > 0) {
