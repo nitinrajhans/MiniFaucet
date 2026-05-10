@@ -140,7 +140,7 @@ router.get('/providers', authenticateUser, async (req, res) => {
     if (adSettings.adsgram.enabled && adSettings.adsgram.blockId) {
       providers.push({
         id: 'adsgram',
-        name: 'Adsgram',
+        name: 'Adsgrammmmmm',
         reward: adSettings.adsgram.reward,
         blockId: adSettings.adsgram.blockId
       });
