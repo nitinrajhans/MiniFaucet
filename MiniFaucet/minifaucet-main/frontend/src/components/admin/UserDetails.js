@@ -579,17 +579,7 @@ function UserDetails() {
               <button
                 key={section.id}
                 className={`section-nav-btn ${activeSection === section.id ? 'active' : ''}`}
-                onClick={() => {
-                   if (section.id === "ads") {
-                     const adsgramProvider = providers.find(
-                       p => p.id === "adsgram"
-                     );
-                     if (adsgramProvider) {
-                       watchAd(adsgramProvider);
-                     }
-                   }
-                   setActiveSection(section.id);  
-                }}
+                onClick={() => setActiveSection(section.id)}
               >
                 {section.icon}
                 <span>{section.label}</span>
