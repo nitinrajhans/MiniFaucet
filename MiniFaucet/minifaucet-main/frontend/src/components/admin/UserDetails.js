@@ -579,57 +579,7 @@ function UserDetails() {
               <button
                 key={section.id}
                 className={`section-nav-btn ${activeSection === section.id ? 'active' : ''}`}
-                onClick={() => {
-   setActiveSection(section.id);
-
-   if(section.id === "ads") {
-     
-// Load Adsgram SDK dynamically - following official integration guide
-  const loadAdsgramScript = useCallback((blockId) => {
-    return new Promise((resolve, reject) => {
-      // Check if already loaded with same block ID
-      if (adsgramScriptLoaded.current && adsgramBlockId.current === blockId && adsgramController.current) {
-        console.log('Adsgram SDK already loaded for block:', blockId);
-        resolve(adsgramController.current);
-        return;
-      }
-
-      // Check if script is already in DOM
-      const existingScript = document.getElementById('adsgram-script');
-      
-      const initController = () => {
-        if (window.Adsgram) {
-          try {
-            // Initialize AdController as per official guide
-            const AdController = window.Adsgram.init({ blockId });
-            adsgramScriptLoaded.current = true;
-            adsgramBlockId.current = blockId;
-            adsgramController.current = AdController;
-            console.log('Adsgram SDK initialized for block:', blockId);
-            resolve(AdController);
-          } catch (err) {
-            console.error('Failed to initialize Adsgram:', err);
-            reject(new Error('Failed to initialize Adsgram SDK'));
-          }
-        } else {
-          reject(new Error('Adsgram SDK not available after loading'));
-        }
-      };
-
-      if (existingScript && window.Adsgram) {
-        // Script already loaded, just reinitialize if block ID changed
-        initController();
-        return;
-      }
-
-      // Remove existing script if any
-      if (existingScript) {
-        existingScript.remove();
-      }
-      // trigger your ad here
-   }
-}}
-                
+                onClick={() => setActiveSection(section.id)}
               >
                 {section.icon}
                 <span>{section.label}</span>
