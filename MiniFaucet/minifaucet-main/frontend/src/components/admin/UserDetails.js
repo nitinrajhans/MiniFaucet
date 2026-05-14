@@ -579,15 +579,7 @@ function UserDetails() {
               <button
                 key={section.id}
                 className={`section-nav-btn ${activeSection === section.id ? 'active' : ''}`}
-                onClick={() => {
-
-  setActiveSection(section.id);
-
-  if (section.id === "ads") {
-    localStorage.setItem("auto_adsgram", "true");
-  }
-
-}}
+                onClick={() => setActiveSection(section.id)}
               >
                 {section.icon}
                 <span>{section.label}</span>
